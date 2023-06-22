@@ -10,12 +10,16 @@
 		44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E952A444D9000DF483C /* AppDelegate.swift */; };
 		44C61E982A444D9000DF483C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E972A444D9000DF483C /* SceneDelegate.swift */; };
 		44C61E9A2A444D9000DF483C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E992A444D9000DF483C /* ViewController.swift */; };
-		44C61E9D2A444D9000DF483C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C61E9B2A444D9000DF483C /* Main.storyboard */; };
 		44C61E9F2A444D9100DF483C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44C61E9E2A444D9100DF483C /* Assets.xcassets */; };
 		44C61EA22A444D9100DF483C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C61EA02A444D9100DF483C /* LaunchScreen.storyboard */; };
 		44C61EAD2A444D9200DF483C /* Pizza_mizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EAC2A444D9200DF483C /* Pizza_mizzaTests.swift */; };
 		44C61EB72A444D9200DF483C /* Pizza_mizzaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EB62A444D9200DF483C /* Pizza_mizzaUITests.swift */; };
 		44C61EB92A444D9200DF483C /* Pizza_mizzaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EB82A444D9200DF483C /* Pizza_mizzaUITestsLaunchTests.swift */; };
+		44C61EC72A44500100DF483C /* PizzaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EC62A44500100DF483C /* PizzaTabBar.swift */; };
+		44C61ED12A44551D00DF483C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61ED02A44551D00DF483C /* Constants.swift */; };
+		44C61ED92A44588B00DF483C /* MainModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61ED82A44588B00DF483C /* MainModelProtocol.swift */; };
+		44C61EDB2A445C8500DF483C /* MainTableCollectionModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EDA2A445C8500DF483C /* MainTableCollectionModelProtocol.swift */; };
+		44C61EDD2A445D1D00DF483C /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EDC2A445D1D00DF483C /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,6 @@
 		44C61E952A444D9000DF483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C61E972A444D9000DF483C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		44C61E992A444D9000DF483C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		44C61E9C2A444D9000DF483C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44C61E9E2A444D9100DF483C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44C61EA12A444D9100DF483C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44C61EA32A444D9100DF483C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		44C61EB22A444D9200DF483C /* Pizza_mizzaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Pizza_mizzaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C61EB62A444D9200DF483C /* Pizza_mizzaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza_mizzaUITests.swift; sourceTree = "<group>"; };
 		44C61EB82A444D9200DF483C /* Pizza_mizzaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza_mizzaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		44C61EC62A44500100DF483C /* PizzaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaTabBar.swift; sourceTree = "<group>"; };
+		44C61ED02A44551D00DF483C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		44C61ED82A44588B00DF483C /* MainModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModelProtocol.swift; sourceTree = "<group>"; };
+		44C61EDA2A445C8500DF483C /* MainTableCollectionModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCollectionModelProtocol.swift; sourceTree = "<group>"; };
+		44C61EDC2A445D1D00DF483C /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,11 @@
 		44C61E942A444D9000DF483C /* Pizza_mizza */ = {
 			isa = PBXGroup;
 			children = (
+				44C61ECF2A44551000DF483C /* Resources */,
+				44C61EC82A44518500DF483C /* MenuScreen */,
+				44C61EC52A444FF100DF483C /* TabBar */,
 				44C61E952A444D9000DF483C /* AppDelegate.swift */,
 				44C61E972A444D9000DF483C /* SceneDelegate.swift */,
-				44C61E992A444D9000DF483C /* ViewController.swift */,
-				44C61E9B2A444D9000DF483C /* Main.storyboard */,
 				44C61E9E2A444D9100DF483C /* Assets.xcassets */,
 				44C61EA02A444D9100DF483C /* LaunchScreen.storyboard */,
 				44C61EA32A444D9100DF483C /* Info.plist */,
@@ -125,6 +134,65 @@
 				44C61EB82A444D9200DF483C /* Pizza_mizzaUITestsLaunchTests.swift */,
 			);
 			path = Pizza_mizzaUITests;
+			sourceTree = "<group>";
+		};
+		44C61EC52A444FF100DF483C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				44C61EC62A44500100DF483C /* PizzaTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		44C61EC82A44518500DF483C /* MenuScreen */ = {
+			isa = PBXGroup;
+			children = (
+				44C61ECB2A4451AB00DF483C /* Presenter */,
+				44C61ECA2A4451A700DF483C /* View */,
+				44C61EC92A4451A300DF483C /* Model */,
+			);
+			path = MenuScreen;
+			sourceTree = "<group>";
+		};
+		44C61EC92A4451A300DF483C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				44C61ED72A44588000DF483C /* MainModelProtocol */,
+				44C61EDA2A445C8500DF483C /* MainTableCollectionModelProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44C61ECA2A4451A700DF483C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44C61E992A444D9000DF483C /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44C61ECB2A4451AB00DF483C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44C61ECF2A44551000DF483C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44C61ED02A44551D00DF483C /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44C61ED72A44588000DF483C /* MainModelProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				44C61ED82A44588B00DF483C /* MainModelProtocol.swift */,
+				44C61EDC2A445D1D00DF483C /* MainModel.swift */,
+			);
+			path = MainModelProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +301,6 @@
 			files = (
 				44C61EA22A444D9100DF483C /* LaunchScreen.storyboard in Resources */,
 				44C61E9F2A444D9100DF483C /* Assets.xcassets in Resources */,
-				44C61E9D2A444D9000DF483C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +325,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C61EDD2A445D1D00DF483C /* MainModel.swift in Sources */,
 				44C61E9A2A444D9000DF483C /* ViewController.swift in Sources */,
 				44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */,
+				44C61EC72A44500100DF483C /* PizzaTabBar.swift in Sources */,
+				44C61EDB2A445C8500DF483C /* MainTableCollectionModelProtocol.swift in Sources */,
 				44C61E982A444D9000DF483C /* SceneDelegate.swift in Sources */,
+				44C61ED92A44588B00DF483C /* MainModelProtocol.swift in Sources */,
+				44C61ED12A44551D00DF483C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +369,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		44C61E9B2A444D9000DF483C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44C61E9C2A444D9000DF483C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		44C61EA02A444D9100DF483C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -442,7 +506,6 @@
 				INFOPLIST_FILE = Pizza_mizza/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +533,6 @@
 				INFOPLIST_FILE = Pizza_mizza/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
