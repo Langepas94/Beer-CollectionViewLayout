@@ -10,7 +10,8 @@ import UIKit
 
 class PizzaTabBar: UITabBarController {
     
-    let mainScreen = ViewController()
+    
+    let builder = AssemblyBulder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,25 @@ extension PizzaTabBar {
     
     func setupAppearance() {
         tabBar.backgroundColor = .white
-        
+        tabBar.unselectedItemTintColor = .gray
+        tabBar.tintColor = .systemPink
     }
     
     func setupControllers() {
-        mainScreen.tabBarItem.image = UIImage(systemName: "basket.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal)
-        setViewControllers([mainScreen], animated: true)
+        tabBar.layer.borderColor = UIColor.gray.cgColor
+        tabBar.layer.borderWidth = 0.3
+        let mainScreen = builder.createMainModule()
+        mainScreen.tabBarItem.image = UIImage(systemName: "list.bullet.rectangle.portrait.fill")
+        
+        let contactScreen = builder.createContactsModule()
+        contactScreen.tabBarItem.image = UIImage(systemName: "phone.fill")
+        
+        let profileScreen = builder.createProfileModule()
+        profileScreen.tabBarItem.image = UIImage(systemName: "person.fill")
+        
+        let basketScreen = builder.createBasketModule()
+        basketScreen.tabBarItem.image = UIImage(systemName: "basket.fill")
+        
+        setViewControllers([mainScreen, contactScreen, profileScreen, basketScreen], animated: true)
     }
 }
