@@ -9,17 +9,21 @@ import Foundation
 
 class NetworkImplement: NetworkService {
     static func baseURL() -> String {
-        "https://api.punkapi.com/v2/"
+       return "https://api.punkapi.com"
     }
     
     func getAllBeers(completion: @escaping (Result<[ItemModel]?, NetworkErrors>) -> Void) {
-        let urlString = URL(string: NetworkImplement.baseURL() + FetchType.allBeers.rawValue)
         
-        guard let url = urlString else {
+        let queryParams = [URLQueryItem(name: "per_page", value: "80")]
+        var components = URLComponents(string: NetworkImplement.baseURL())
+        components?.path = "/v2/" + FetchType.allBeers.rawValue
+        components?.queryItems = queryParams
+       
+        guard let url = components?.url else {
             print(NetworkErrors.invalidURL)
             return
         }
-        
+        print(url)
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else  {
                 completion(.failure(NetworkErrors.noDataAvailable))

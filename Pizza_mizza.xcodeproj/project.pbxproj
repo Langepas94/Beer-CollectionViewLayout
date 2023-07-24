@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		447E9C4E2A6E445500A0A9FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9C4D2A6E445500A0A9FD /* MainCoordinator.swift */; };
 		44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E952A444D9000DF483C /* AppDelegate.swift */; };
 		44C61E982A444D9000DF483C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E972A444D9000DF483C /* SceneDelegate.swift */; };
 		44C61E9A2A444D9000DF483C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E992A444D9000DF483C /* MenuViewController.swift */; };
@@ -15,7 +16,6 @@
 		44C61EAD2A444D9200DF483C /* Pizza_mizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EAC2A444D9200DF483C /* Pizza_mizzaTests.swift */; };
 		44C61EB72A444D9200DF483C /* Pizza_mizzaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EB62A444D9200DF483C /* Pizza_mizzaUITests.swift */; };
 		44C61EB92A444D9200DF483C /* Pizza_mizzaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EB82A444D9200DF483C /* Pizza_mizzaUITestsLaunchTests.swift */; };
-		44C61EC72A44500100DF483C /* PizzaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EC62A44500100DF483C /* PizzaTabBar.swift */; };
 		44C61ED12A44551D00DF483C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61ED02A44551D00DF483C /* Constants.swift */; };
 		44C61ED92A44588B00DF483C /* MainModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61ED82A44588B00DF483C /* MainModelProtocol.swift */; };
 		44C61EDD2A445D1D00DF483C /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EDC2A445D1D00DF483C /* MainModel.swift */; };
@@ -25,7 +25,6 @@
 		44C61EE82A44653F00DF483C /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EE72A44653F00DF483C /* ItemModel.swift */; };
 		44C61EEA2A446D8000DF483C /* NetworkImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EE92A446D8000DF483C /* NetworkImplement.swift */; };
 		44C61EEC2A44784500DF483C /* AssemblyModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EEB2A44784500DF483C /* AssemblyModelBuilder.swift */; };
-		44C61EEE2A44797700DF483C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EED2A44797700DF483C /* Router.swift */; };
 		44C61EF02A456BF000DF483C /* HeaderBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EEF2A456BF000DF483C /* HeaderBannerView.swift */; };
 		44C61EF62A456FDB00DF483C /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EF52A456FDB00DF483C /* HeaderCell.swift */; };
 		44C61EF92A4573F100DF483C /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EF82A4573F100DF483C /* MenuTableCell.swift */; };
@@ -52,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		447E9C4D2A6E445500A0A9FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		44C61E922A444D9000DF483C /* Pizza_mizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizza_mizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C61E952A444D9000DF483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C61E972A444D9000DF483C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 		44C61EB22A444D9200DF483C /* Pizza_mizzaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Pizza_mizzaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C61EB62A444D9200DF483C /* Pizza_mizzaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza_mizzaUITests.swift; sourceTree = "<group>"; };
 		44C61EB82A444D9200DF483C /* Pizza_mizzaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza_mizzaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		44C61EC62A44500100DF483C /* PizzaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaTabBar.swift; sourceTree = "<group>"; };
 		44C61ED02A44551D00DF483C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44C61ED82A44588B00DF483C /* MainModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModelProtocol.swift; sourceTree = "<group>"; };
 		44C61EDC2A445D1D00DF483C /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
@@ -74,7 +73,6 @@
 		44C61EE72A44653F00DF483C /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		44C61EE92A446D8000DF483C /* NetworkImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImplement.swift; sourceTree = "<group>"; };
 		44C61EEB2A44784500DF483C /* AssemblyModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModelBuilder.swift; sourceTree = "<group>"; };
-		44C61EED2A44797700DF483C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		44C61EEF2A456BF000DF483C /* HeaderBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBannerView.swift; sourceTree = "<group>"; };
 		44C61EF52A456FDB00DF483C /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		44C61EF82A4573F100DF483C /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
@@ -108,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		447E9C4B2A6E443500A0A9FD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				447E9C4D2A6E445500A0A9FD /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		44C61E892A444D9000DF483C = {
 			isa = PBXGroup;
 			children = (
@@ -131,17 +137,16 @@
 		44C61E942A444D9000DF483C /* Pizza_mizza */ = {
 			isa = PBXGroup;
 			children = (
+				447E9C4B2A6E443500A0A9FD /* Coordinator */,
 				44C61EE22A44641300DF483C /* NetworkLayer */,
 				44C61ECF2A44551000DF483C /* Resources */,
 				44C61EC82A44518500DF483C /* MenuScreen */,
-				44C61EC52A444FF100DF483C /* TabBar */,
 				44C61E952A444D9000DF483C /* AppDelegate.swift */,
 				44C61E972A444D9000DF483C /* SceneDelegate.swift */,
 				44C61E9E2A444D9100DF483C /* Assets.xcassets */,
 				44C61EA02A444D9100DF483C /* LaunchScreen.storyboard */,
 				44C61EA32A444D9100DF483C /* Info.plist */,
 				44C61EEB2A44784500DF483C /* AssemblyModelBuilder.swift */,
-				44C61EED2A44797700DF483C /* Router.swift */,
 			);
 			path = Pizza_mizza;
 			sourceTree = "<group>";
@@ -161,14 +166,6 @@
 				44C61EB82A444D9200DF483C /* Pizza_mizzaUITestsLaunchTests.swift */,
 			);
 			path = Pizza_mizzaUITests;
-			sourceTree = "<group>";
-		};
-		44C61EC52A444FF100DF483C /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				44C61EC62A44500100DF483C /* PizzaTabBar.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		44C61EC82A44518500DF483C /* MenuScreen */ = {
@@ -430,11 +427,10 @@
 				44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */,
 				44C61EE12A4463A600DF483C /* MenuPresenter.swift in Sources */,
 				44C61F022A45AE4E00DF483C /* CategoriesCell.swift in Sources */,
-				44C61EC72A44500100DF483C /* PizzaTabBar.swift in Sources */,
-				44C61EEE2A44797700DF483C /* Router.swift in Sources */,
 				44C61EE82A44653F00DF483C /* ItemModel.swift in Sources */,
 				44C61E982A444D9000DF483C /* SceneDelegate.swift in Sources */,
 				44C61EF02A456BF000DF483C /* HeaderBannerView.swift in Sources */,
+				447E9C4E2A6E445500A0A9FD /* MainCoordinator.swift in Sources */,
 				44C61ED92A44588B00DF483C /* MainModelProtocol.swift in Sources */,
 				44C61ED12A44551D00DF483C /* Constants.swift in Sources */,
 				44C61EFF2A45AE2500DF483C /* CategoriesView.swift in Sources */,
