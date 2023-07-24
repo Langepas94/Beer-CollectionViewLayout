@@ -9,13 +9,13 @@ import Foundation
 
 struct MainModel: MainModelProtocol {
 
-    var userCity: String
+    var userCity: String?
 
-    var headerImageNames: [String]
+    var headerImageNames: [String]?
 
-    var categories: [String]
+    var categories: [String]?
 
-    var tableData: [ItemModel]
+    var tableData: [BeerDataObject]?
 
 }
 

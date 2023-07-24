@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		447E9C4E2A6E445500A0A9FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9C4D2A6E445500A0A9FD /* MainCoordinator.swift */; };
+		447E9C512A6E67D500A0A9FD /* BeerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9C502A6E67D500A0A9FD /* BeerFilter.swift */; };
+		447E9C542A6E681500A0A9FD /* BeerDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9C532A6E681500A0A9FD /* BeerDataObject.swift */; };
 		44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E952A444D9000DF483C /* AppDelegate.swift */; };
 		44C61E982A444D9000DF483C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E972A444D9000DF483C /* SceneDelegate.swift */; };
 		44C61E9A2A444D9000DF483C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E992A444D9000DF483C /* MenuViewController.swift */; };
@@ -52,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		447E9C4D2A6E445500A0A9FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		447E9C502A6E67D500A0A9FD /* BeerFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerFilter.swift; sourceTree = "<group>"; };
+		447E9C532A6E681500A0A9FD /* BeerDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDataObject.swift; sourceTree = "<group>"; };
 		44C61E922A444D9000DF483C /* Pizza_mizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizza_mizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C61E952A444D9000DF483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C61E972A444D9000DF483C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,22 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		447E9C4F2A6E67C700A0A9FD /* BeerFilter */ = {
+			isa = PBXGroup;
+			children = (
+				447E9C502A6E67D500A0A9FD /* BeerFilter.swift */,
+			);
+			path = BeerFilter;
+			sourceTree = "<group>";
+		};
+		447E9C522A6E680800A0A9FD /* BeerDataObject */ = {
+			isa = PBXGroup;
+			children = (
+				447E9C532A6E681500A0A9FD /* BeerDataObject.swift */,
+			);
+			path = BeerDataObject;
+			sourceTree = "<group>";
+		};
 		44C61E892A444D9000DF483C = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +157,8 @@
 		44C61E942A444D9000DF483C /* Pizza_mizza */ = {
 			isa = PBXGroup;
 			children = (
+				447E9C522A6E680800A0A9FD /* BeerDataObject */,
+				447E9C4F2A6E67C700A0A9FD /* BeerFilter */,
 				447E9C4B2A6E443500A0A9FD /* Coordinator */,
 				44C61EE22A44641300DF483C /* NetworkLayer */,
 				44C61ECF2A44551000DF483C /* Resources */,
@@ -420,10 +442,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				44C61EE42A44649800DF483C /* NetworkService.swift in Sources */,
+				447E9C512A6E67D500A0A9FD /* BeerFilter.swift in Sources */,
 				44C61EF92A4573F100DF483C /* MenuTableCell.swift in Sources */,
 				44C61EDD2A445D1D00DF483C /* MainModel.swift in Sources */,
 				44C61E9A2A444D9000DF483C /* MenuViewController.swift in Sources */,
 				44C61EEC2A44784500DF483C /* AssemblyModelBuilder.swift in Sources */,
+				447E9C542A6E681500A0A9FD /* BeerDataObject.swift in Sources */,
 				44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */,
 				44C61EE12A4463A600DF483C /* MenuPresenter.swift in Sources */,
 				44C61F022A45AE4E00DF483C /* CategoriesCell.swift in Sources */,

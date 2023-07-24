@@ -8,8 +8,8 @@
 import Foundation
 
 protocol MainModelProtocol {
-    var userCity: String { get set }
-    var headerImageNames: [String] { get set }
-    var categories: [String] { get set }
-    var tableData: [ItemModel] { get set }
+    var userCity: String? { get set }
+    var headerImageNames: [String]? { get set }
+    var categories: [String]? { get set }
+    var tableData: [BeerDataObject]? { get set }
 }

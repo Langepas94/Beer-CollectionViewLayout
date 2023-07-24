@@ -29,7 +29,7 @@ class MenuViewController: UIViewController {
     private lazy var headerBanners: HeaderBannerView = {
         let width = UIScreen.main.bounds.width
         let height = width * 0.3
-        let banners = HeaderBannerView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: height)))
+        let banners = HeaderBannerView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: height)), bannersImagesNames: presenter?.mainData?.headerImageNames ?? [""])
         return banners
     }()
     
@@ -96,22 +96,24 @@ extension MenuViewController {
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        presenter?.mainData?.tableData.count ?? 0
+        presenter?.mainData?.tableData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = menuTableView.dequeueReusableCell(withIdentifier: MenuTableCell.id, for: indexPath) as? MenuTableCell else { return UITableViewCell()}
-        guard let model = presenter?.mainData?.tableData[indexPath.row] else {
+        guard let model = presenter?.mainData?.tableData?[indexPath.row] else {
             return UITableViewCell() }
         cell.selectionStyle = .none
-        cell.configure(newtorkModel: model)
+//        cell.configure(newtorkModel: model)
+        cell.configureFromBeerObject(beerObject: model)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let categories = ["1", "2", "3", "4", "5", "6"]
+//        let categories = ["1", "2", "3", "4", "5", "6"]
+        let categories = presenter?.mainData?.categories  ?? ["empty"]
         let view = CategoriesView(categories: categories)
         return view
     }

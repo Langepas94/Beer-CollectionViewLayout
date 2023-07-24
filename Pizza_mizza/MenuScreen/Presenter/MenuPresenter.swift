@@ -11,18 +11,23 @@ class MenuPresenter: MenuPresenterProtocol {
     
     weak var view: MainViewProtocol?
     let networkManager: NetworkService
-    var mainData: MainModel? = MainModel(userCity: "Moscow", headerImageNames: ["1", "2"], categories: ["1", "2", "3"], tableData: [ItemModel]())
-    
+    let categs = BeerFilter()
+    var mainData: MainModel? = MainModel(headerImageNames: ["banner1", "banner2", "banner3", "banner4", "banner5", "banner6"])
+
     func getData() {
        
         networkManager.getAllBeers { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let data):
+                
                 DispatchQueue.main.async {
-                    self.mainData?.tableData = data ?? [ItemModel]()
-//                    print(self.mainData?.tableData)
+
+                    let filtered = self.categs.filterBeers(beers: data ?? [ItemModel]())
+
+                    self.mainData?.tableData = filtered
                     self.view?.dataLoaded()
+                   
                 }
                 
             case .failure(let error):
@@ -30,7 +35,7 @@ class MenuPresenter: MenuPresenterProtocol {
             }
         }
     }
-
+    
     
     func onTapCategory() {
         //

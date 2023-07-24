@@ -70,6 +70,13 @@ class MenuTableCell: UITableViewCell {
         buyLabel.text = "abv : " + String(newtorkModel.abv ?? 0.0)
     }
     
+    func configureFromBeerObject(beerObject: BeerDataObject) {
+        itemImage.kf.setImage(with: URL(string: beerObject.imageURL ?? ""))
+        itemNameLabel.text = beerObject.name ?? ""
+        itemDescriptionLabel.text = beerObject.description ?? ""
+        buyLabel.text = "abv : " + String(beerObject.abv ?? 0.0)
+    }
+    
     private func setupUI() {
         contentView.addSubview(itemImage)
         contentView.addSubview(descriptionItemView)

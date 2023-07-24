@@ -18,7 +18,7 @@ final class HeaderBannerView: UIView {
         return collection
     }()
     
-    var bannersImagesNames = ["banner1", "banner2", "banner3", "banner4", "banner5", "banner6"]
+    var bannersImagesNames: [String]
     
     private func createLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout(section: createCollectionView())
@@ -44,8 +44,10 @@ final class HeaderBannerView: UIView {
     }
     
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, bannersImagesNames: [String]) {
+        self.bannersImagesNames = bannersImagesNames
         super.init(frame: frame)
+        
         self.setupUI()
     }
     

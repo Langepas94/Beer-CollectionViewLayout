@@ -69,7 +69,7 @@ final class MainCoordinator: Coordinator {
     func createContactsModule() -> UIViewController {
         let view = UIViewController()
         view.tabBarItem = UITabBarItem(title: "Contacst", image: UIImage(systemName: "phone.fill"), tag: 1)
-        view.view.backgroundColor = .yellow
+        view.view.backgroundColor = .white
         return view
     }
     
@@ -78,6 +78,7 @@ final class MainCoordinator: Coordinator {
     func createProfileModule() -> UIViewController {
         let view = UIViewController()
         view.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 2)
+        view.view.backgroundColor = .white
         return view
     }
     
@@ -86,6 +87,7 @@ final class MainCoordinator: Coordinator {
     func createBasketModule() -> UIViewController {
         let view = UIViewController()
         view.tabBarItem = UITabBarItem(title: "Basket", image: UIImage(systemName: "basket.fill"), tag: 3)
+        view.view.backgroundColor = .white
         return view
     }
 }
