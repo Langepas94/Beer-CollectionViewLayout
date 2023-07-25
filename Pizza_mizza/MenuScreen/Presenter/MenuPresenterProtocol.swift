@@ -17,5 +17,6 @@ protocol MenuPresenterProtocol: AnyObject {
     var view: MainViewProtocol? { get set }
     func getData()
     func onTapCategory()
+    func setCategories() -> [String] 
     var mainData: MainModel? { get set }
 }

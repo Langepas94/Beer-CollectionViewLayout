@@ -9,7 +9,7 @@ import Foundation
 
 final class BeerFilter {
     
-    var filters: [(min: Double, max: Double, categoryName: String)] = [(0.0,3.0, "Light drunk"), (3.0001, 8.0, "Pre Medium drunk"),(8.0001, 15.0, "Medium drunk"), (15.0001, 35.0, "Post Medium drunk"), (35.0001, 100.0, "Hard Level drunk")]
+    private var filters: [(min: Double, max: Double, categoryName: String)] = [(0.0,5.0, "Classic Beer"), (5.0001, 7.0, "Nice drunk"),(7.0001, 10.0, "Highest"), (10.0001, 12.0, "Hello B* dr."), (12.0001, 100.0, "Drunken")]
     
     func filterBeers(beers: [ItemModel]) -> [BeerDataObject] {
         var filteredBeers = [BeerDataObject]()
@@ -22,11 +22,21 @@ final class BeerFilter {
                     
                 }
                 
-                filteredBeers.append(BeerDataObject(name: beer.name ?? "", description: beer.description ?? "", imageURL: beer.image_url ?? "", ingredients: nil, abv: beer.abv ?? 0, category: category.first?.categoryName ?? ""))
+                filteredBeers.append(BeerDataObject(name: beer.name ?? "", description: beer.description ?? "", imageURL: beer.image_url ?? "", abv: beer.abv ?? 0, category: category.first?.categoryName ?? ""))
             }
-            
         }
-
+        filteredBeers.sort { first, second in
+            return first.abv ?? 0 < second.abv ?? 0
+        }
         return filteredBeers
+    }
+    
+    func getCategories() -> [String] {
+        
+        let categories = filters.map { filter in
+            return filter.categoryName
+        }
+        
+        return categories
     }
 }

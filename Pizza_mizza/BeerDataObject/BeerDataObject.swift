@@ -7,11 +7,20 @@
 
 import Foundation
 
-struct BeerDataObject {
+struct BeerDataObject: Codable, Hashable {
+    var id = UUID()
     var name: String?
     var description: String?
     var imageURL: String?
-    var ingredients: Ingredients?
+
     var abv: Double?
     var category: String?
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: BeerDataObject, rhs: BeerDataObject) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

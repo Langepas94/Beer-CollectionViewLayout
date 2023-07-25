@@ -10,17 +10,17 @@ import UIKit
 class MenuViewController: UIViewController {
     
     var presenter: MenuPresenterProtocol?
-    
+    private var currentProductType: String?
+    private var lastContentOffset: CGFloat = 0
     // MARK: - private properties
     
-    private lazy var menuTableView: UITableView = {
+    private var menuTableView: UITableView = {
         let table = UITableView()
         table.register(MenuTableCell.self, forCellReuseIdentifier: MenuTableCell.id)
-        table.delegate = self
-        table.dataSource = self
+     
         table.separatorStyle = .singleLine
         table.separatorInset = .zero
-        table.tableHeaderView = headerBanners
+        
         table.showsVerticalScrollIndicator = false
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
@@ -33,11 +33,14 @@ class MenuViewController: UIViewController {
         return banners
     }()
     
+    var viewka: CategoriesView?
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -63,6 +66,11 @@ extension MenuViewController: MainViewProtocol {
 extension MenuViewController {
     func setupUI() {
         
+        menuTableView.delegate = self
+        menuTableView.dataSource = self
+        menuTableView.tableHeaderView = headerBanners
+        
+      
         let menuItem1 = UIAction(title: "Санкт-Петербург") { action in
             
         }
@@ -89,6 +97,11 @@ extension MenuViewController {
             menuTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             menuTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        guard let categories = presenter?.setCategories() else { return }
+        
+        viewka = CategoriesView(categories: categories)
+        viewka?.delegate = self
     }
 }
 
@@ -105,21 +118,65 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         guard let model = presenter?.mainData?.tableData?[indexPath.row] else {
             return UITableViewCell() }
         cell.selectionStyle = .none
-//        cell.configure(newtorkModel: model)
         cell.configureFromBeerObject(beerObject: model)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let categories = ["1", "2", "3", "4", "5", "6"]
-        let categories = presenter?.mainData?.categories  ?? ["empty"]
-        let view = CategoriesView(categories: categories)
-        return view
+
+
+        viewka?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
+        return viewka
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
+    }
+    
+    
+}
+
+extension MenuViewController: CategoryDelegateProtocol {
+    func scrollToSelectedCategory(type: String) {
+        let products = presenter?.mainData?.tableData
+        let index = products?.firstIndex(where: { $0.category == type })
+    
+        if let index = index {
+            let indexPath = IndexPath(item: index, section: 0)
+            menuTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
+    }
+}
+
+extension MenuViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let indexPath = menuTableView.indexPathsForVisibleRows?.first {
+            let productType = presenter?.mainData?.tableData?[indexPath.item].category
+            if productType != currentProductType {
+                currentProductType = productType
+
+                guard let productType = productType else { return }
+
+                let visibleSections = menuTableView.indexPathsForVisibleRows
+
+                let categories = presenter?.mainData?.categories  ?? ["empty"]
+                guard let viewka = viewka else { return }
+              
+                viewka.categories = categories
+                viewka.selectedCategory = productType
+
+                let indexPaths = viewka.collectionView.indexPathsForVisibleItems
+                if let lastIndexPath = indexPaths.last, scrollView.contentOffset.y + 50 > lastContentOffset {
+                    viewka.collectionView.scrollToItem(at: lastIndexPath, at: .centeredHorizontally, animated: true)
+                    viewka.collectionView.reloadItems(at: indexPaths)
+                } else if let firstIndexPath = indexPaths.first {
+                    viewka.collectionView.scrollToItem(at: firstIndexPath, at: .centeredHorizontally, animated: true)
+                    viewka.collectionView.reloadItems(at: indexPaths)
+                }
+                lastContentOffset = scrollView.contentOffset.y
+            }
+        }
     }
     
     

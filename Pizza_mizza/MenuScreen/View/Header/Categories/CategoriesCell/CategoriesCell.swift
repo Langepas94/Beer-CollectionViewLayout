@@ -18,6 +18,7 @@ final class CategoriesCell: UICollectionViewCell {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemPink.withAlphaComponent(0.2).cgColor
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textAlignment = .center
         return label
     }()
@@ -27,16 +28,24 @@ final class CategoriesCell: UICollectionViewCell {
         setupView()
         
     }
-    override var isSelected: Bool {
+//    override var isSelected: Bool {
+//        didSet {
+//            if isSelected {
+//                labelView.backgroundColor = .systemPink.withAlphaComponent(0.2)
+//            } else {
+//                labelView.backgroundColor = .white
+//            }
+//        }
+//    }
+    var isSelectedCell: Bool = false {
         didSet {
-            if isSelected {
+            if isSelectedCell {
                 labelView.backgroundColor = .systemPink.withAlphaComponent(0.2)
             } else {
                 labelView.backgroundColor = .white
             }
         }
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

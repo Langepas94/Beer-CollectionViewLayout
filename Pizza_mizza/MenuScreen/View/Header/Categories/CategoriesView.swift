@@ -8,16 +8,25 @@
 import Foundation
 import UIKit
 
+protocol CategoryDelegateProtocol: AnyObject {
+    func scrollToSelectedCategory(type: String)
+}
+
 final class CategoriesView: UITableViewHeaderFooterView {
     
+    weak var delegate: CategoryDelegateProtocol?
+    
+    var selectedCategory: String?
     // MARK: - private properties
     
-    private var categories: [String]
-    
-    private lazy var collectionView: UICollectionView = {
+    var categories: [String]?
+   
+    lazy var collectionView: UICollectionView = {
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(CategoriesCell.self, forCellWithReuseIdentifier: CategoriesCell.id)
         collectionView.backgroundColor = .systemBackground
@@ -35,6 +44,7 @@ final class CategoriesView: UITableViewHeaderFooterView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
+               
     }
     
     private func createCompositionalLayout() -> UICollectionViewLayout {
@@ -42,6 +52,7 @@ final class CategoriesView: UITableViewHeaderFooterView {
     }
     
     private func createButtonView() -> NSCollectionLayoutSection {
+        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
         
@@ -63,11 +74,12 @@ final class CategoriesView: UITableViewHeaderFooterView {
     
     // MARK: - Init
     
-    init(categories: [String]) {
+    init(categories: [String]?) {
         self.categories = categories
         super.init(reuseIdentifier: CategoriesCell.id)
         self.setupViews()
-        collectionView.selectItem(at: IndexPath.init(item: 0, section: 0), animated: true, scrollPosition: .right)
+//        collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
+    
     }
     
     required init?(coder: NSCoder) {
@@ -79,12 +91,32 @@ final class CategoriesView: UITableViewHeaderFooterView {
 extension CategoriesView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return categories?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CategoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCell.id, for: indexPath) as! CategoriesCell
-        cell.configure(string: categories[indexPath.row])
+        cell.configure(string: categories?[indexPath.row] ?? "")
+        if categories?[indexPath.row] == selectedCategory {
+            cell.isSelectedCell = true
+        } else {
+            cell.isSelectedCell = false
+        }
         return cell
+    }
+}
+
+
+extension CategoriesView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        delegate?.scrollToSelectedCategory(type: categories?[indexPath.row] ?? "")
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoriesCell else { return }
+        if categories?[indexPath.row] == selectedCategory {
+            cell.isSelected = true
+            print(categories?[indexPath.row])
+        } else {
+            cell.isSelectedCell = false
+        }
     }
 }

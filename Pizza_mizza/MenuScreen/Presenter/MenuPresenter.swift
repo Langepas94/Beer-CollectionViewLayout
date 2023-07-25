@@ -26,6 +26,7 @@ class MenuPresenter: MenuPresenterProtocol {
                     let filtered = self.categs.filterBeers(beers: data ?? [ItemModel]())
 
                     self.mainData?.tableData = filtered
+                    self.mainData?.categories = self.categs.getCategories()
                     self.view?.dataLoaded()
                    
                 }
@@ -39,6 +40,10 @@ class MenuPresenter: MenuPresenterProtocol {
     
     func onTapCategory() {
         //
+    }
+    
+    func setCategories() -> [String] {
+        categs.getCategories()
     }
     
     required init(view: MainViewProtocol, networkManager: NetworkService) {
