@@ -94,8 +94,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Pizza_mizza/MenuScreen/Presenter/MenuPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -199,180 +199,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7F0575BB-C554-4974-BD38-DB0E143C0671"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "scrollToSelectedCategory(type:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7F0575BB-C554-4974-BD38-DB0E143C0671 - 5bc9069229ea65bb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pizza_mizza.MenuViewController.scrollToSelectedCategory(type: Swift.String) -&gt; ()"
-                  moduleName = "Pizza_mizza"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "140"
-                  endingLineNumber = "140"
-                  offsetFromSymbolStart = "200">
-               </Location>
-               <Location
-                  uuid = "7F0575BB-C554-4974-BD38-DB0E143C0671 - 5bc9069229ea6579"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pizza_mizza.MenuViewController.scrollToSelectedCategory(type: Swift.String) -&gt; ()"
-                  moduleName = "Pizza_mizza"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "200">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9EC0EA08-98FF-402D-AB43-59FEC298204D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "scrollToSelectedCategory(type:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9EC0EA08-98FF-402D-AB43-59FEC298204D - 5bc9069229ea6558"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pizza_mizza.MenuViewController.scrollToSelectedCategory(type: Swift.String) -&gt; ()"
-                  moduleName = "Pizza_mizza"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "141"
-                  endingLineNumber = "141"
-                  offsetFromSymbolStart = "512">
-               </Location>
-               <Location
-                  uuid = "9EC0EA08-98FF-402D-AB43-59FEC298204D - 5bc9069229ea6558"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pizza_mizza.MenuViewController.scrollToSelectedCategory(type: Swift.String) -&gt; ()"
-                  moduleName = "Pizza_mizza"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "141"
-                  endingLineNumber = "141"
-                  offsetFromSymbolStart = "588">
-               </Location>
-               <Location
-                  uuid = "9EC0EA08-98FF-402D-AB43-59FEC298204D - ca6a6888ee036425"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Pizza_mizza.BeerDataObject) -&gt; Swift.Bool in Pizza_mizza.MenuViewController.scrollToSelectedCategory(type: Swift.String) -&gt; ()"
-                  moduleName = "Pizza_mizza"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "141"
-                  endingLineNumber = "141"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "9EC0EA08-98FF-402D-AB43-59FEC298204D - 5bc9069229ea6579"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pizza_mizza.MenuViewController.scrollToSelectedCategory(type: Swift.String) -&gt; ()"
-                  moduleName = "Pizza_mizza"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "200">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55D8F755-9E1F-4936-97C8-D038FFD608EF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "scrollViewDidScroll(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "55D8F755-9E1F-4936-97C8-D038FFD608EF - 87456bca7f071bf8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pizza_mizza.MenuViewController.scrollViewDidScroll(__C.UIScrollView) -&gt; ()"
-                  moduleName = "Pizza_mizza"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "452">
-               </Location>
-               <Location
-                  uuid = "55D8F755-9E1F-4936-97C8-D038FFD608EF - 87456bca7f071bf8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pizza_mizza.MenuViewController.scrollViewDidScroll(__C.UIScrollView) -&gt; ()"
-                  moduleName = "Pizza_mizza"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/MenuScreen/View/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "420">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CCC8654E-1E57-416E-939E-31B1574FEFDB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -380,8 +206,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>

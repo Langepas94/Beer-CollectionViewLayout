@@ -34,12 +34,18 @@ class MenuViewController: UIViewController {
     }()
     
     var viewka: CategoriesView?
+    var vv: String = ""
+    var vvv: String? = ""
+    
+    
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        
         
     }
     
@@ -106,7 +112,7 @@ extension MenuViewController {
 }
 
 // MARK: - Setup Table Delegate/Datasource
-extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
+extension MenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         presenter?.mainData?.tableData?.count ?? 0
@@ -126,52 +132,52 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
 
-        viewka?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
+//        viewka?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
         return viewka
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
-    
-    
 }
-
+// MARK: - CategoryDelegate
 extension MenuViewController: CategoryDelegateProtocol {
     func scrollToSelectedCategory(type: String) {
         let products = presenter?.mainData?.tableData
         let index = products?.firstIndex(where: { $0.category == type })
-    
         if let index = index {
             let indexPath = IndexPath(item: index, section: 0)
+            
             menuTableView.scrollToRow(at: indexPath, at: .top, animated: true)
         }
     }
 }
 
-extension MenuViewController {
+// MARK: - Table delegate
+
+extension MenuViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if let indexPath = menuTableView.indexPathsForVisibleRows?.first {
-            let productType = presenter?.mainData?.tableData?[indexPath.item].category
+        if let indexPath = menuTableView.indexPathsForVisibleRows?[1] {
+            let productType = presenter?.mainData?.tableData?[indexPath.row].category
             if productType != currentProductType {
                 currentProductType = productType
 
                 guard let productType = productType else { return }
-
-                let visibleSections = menuTableView.indexPathsForVisibleRows
 
                 let categories = presenter?.mainData?.categories  ?? ["empty"]
                 guard let viewka = viewka else { return }
               
                 viewka.categories = categories
                 viewka.selectedCategory = productType
-
+                
                 let indexPaths = viewka.collectionView.indexPathsForVisibleItems
-                if let lastIndexPath = indexPaths.last, scrollView.contentOffset.y + 50 > lastContentOffset {
-                    viewka.collectionView.scrollToItem(at: lastIndexPath, at: .centeredHorizontally, animated: true)
+                
+                if let lastIndexPath = indexPaths.last, scrollView.contentOffset.y > lastContentOffset{
+                    viewka.collectionView.scrollToItem(at: lastIndexPath, at: .centeredHorizontally, animated: false)
+                    
                     viewka.collectionView.reloadItems(at: indexPaths)
                 } else if let firstIndexPath = indexPaths.first {
-                    viewka.collectionView.scrollToItem(at: firstIndexPath, at: .centeredHorizontally, animated: true)
+                    viewka.collectionView.scrollToItem(at: firstIndexPath, at: .centeredHorizontally, animated: false)
                     viewka.collectionView.reloadItems(at: indexPaths)
                 }
                 lastContentOffset = scrollView.contentOffset.y

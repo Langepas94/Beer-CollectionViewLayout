@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class MenuPresenter: MenuPresenterProtocol {
     
@@ -13,7 +14,7 @@ class MenuPresenter: MenuPresenterProtocol {
     let networkManager: NetworkService
     let categs = BeerFilter()
     var mainData: MainModel? = MainModel(headerImageNames: ["banner1", "banner2", "banner3", "banner4", "banner5", "banner6"])
-
+    var db: DataBaseProtocol = BeerDataBase()
     func getData() {
        
         networkManager.getAllBeers { [weak self] result in
@@ -21,14 +22,15 @@ class MenuPresenter: MenuPresenterProtocol {
             switch result {
             case .success(let data):
                 
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
 
                     let filtered = self.categs.filterBeers(beers: data ?? [ItemModel]())
 
                     self.mainData?.tableData = filtered
                     self.mainData?.categories = self.categs.getCategories()
                     self.view?.dataLoaded()
-                   
+//                    self.db.saveToDb(filtered)
+//                    print(self.db.getFromDb())
                 }
                 
             case .failure(let error):
