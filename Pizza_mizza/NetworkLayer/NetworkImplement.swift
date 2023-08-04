@@ -23,7 +23,7 @@ class NetworkImplement: NetworkService {
             print(NetworkErrors.invalidURL)
             return
         }
-        print(url)
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else  {
                 completion(.failure(NetworkErrors.noDataAvailable))

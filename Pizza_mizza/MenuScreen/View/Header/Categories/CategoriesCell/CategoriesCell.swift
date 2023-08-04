@@ -54,6 +54,8 @@ final class CategoriesCell: UICollectionViewCell {
         labelView.text = string
     }
     
+    
+    
     private func setupView() {
         
         backgroundColor = .systemBackground
@@ -61,13 +63,13 @@ final class CategoriesCell: UICollectionViewCell {
         labelView.clipsToBounds = true
         labelView.layer.cornerRadius = 10
         
-        addSubview(labelView)
+        contentView.addSubview(labelView)
         
         NSLayoutConstraint.activate([
-            labelView.topAnchor.constraint(equalTo: topAnchor),
-            labelView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            labelView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            labelView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            labelView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            labelView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            labelView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            labelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
         ])
     }
 }

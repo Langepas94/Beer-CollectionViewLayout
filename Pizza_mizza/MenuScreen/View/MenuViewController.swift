@@ -12,6 +12,7 @@ class MenuViewController: UIViewController {
     var presenter: MenuPresenterProtocol?
     private var currentProductType: String?
     private var lastContentOffset: CGFloat = 0
+    
     // MARK: - private properties
     
     private var menuTableView: UITableView = {
@@ -63,6 +64,7 @@ extension MenuViewController: MainViewProtocol {
     }
     
     func dataLoaded() {
+                viewka?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
         menuTableView.reloadData()
     }
     
@@ -106,7 +108,11 @@ extension MenuViewController {
         
         guard let categories = presenter?.setCategories() else { return }
         
-        viewka = CategoriesView(categories: categories)
+//        var productType = presenter?.mainData?.tableData?[0].category
+//        if productType == currentProductType {
+//            currentProductType = productType
+//        }
+        viewka = CategoriesView(categories: categories, selectedCategory: categories.first!)
         viewka?.delegate = self
     }
 }
@@ -131,24 +137,27 @@ extension MenuViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
-
-//        viewka?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
         return viewka
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
 }
 // MARK: - CategoryDelegate
 extension MenuViewController: CategoryDelegateProtocol {
+    
     func scrollToSelectedCategory(type: String) {
         let products = presenter?.mainData?.tableData
         let index = products?.firstIndex(where: { $0.category == type })
         if let index = index {
             let indexPath = IndexPath(item: index, section: 0)
+//            let rect = menuTableView.rectForRow(at: indexPath).origin.y - 50
+//            let alreadyRect = CGRect(x: 0, y: rect, width: menuTableView.bounds.width, height: menuTableView.frame.height)
+            menuTableView.scrollToRow(at: indexPath, at: .top, animated: true)
             
             menuTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+           
         }
     }
 }
@@ -172,7 +181,7 @@ extension MenuViewController: UITableViewDelegate {
                 
                 let indexPaths = viewka.collectionView.indexPathsForVisibleItems
                 
-                if let lastIndexPath = indexPaths.last, scrollView.contentOffset.y > lastContentOffset{
+                if let lastIndexPath = indexPaths.first, scrollView.contentOffset.y > lastContentOffset {
                     viewka.collectionView.scrollToItem(at: lastIndexPath, at: .centeredHorizontally, animated: false)
                     
                     viewka.collectionView.reloadItems(at: indexPaths)
