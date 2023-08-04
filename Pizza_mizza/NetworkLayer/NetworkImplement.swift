@@ -7,9 +7,9 @@
 
 import Foundation
 
-class NetworkImplement: NetworkService {
+final class NetworkImplement: NetworkService {
     static func baseURL() -> String {
-       return "https://api.punkapi.com"
+        return "https://api.punkapi.com"
     }
     
     func getAllBeers(completion: @escaping (Result<[ItemModel]?, NetworkErrors>) -> Void) {
@@ -18,7 +18,7 @@ class NetworkImplement: NetworkService {
         var components = URLComponents(string: NetworkImplement.baseURL())
         components?.path = "/v2/" + FetchType.allBeers.rawValue
         components?.queryItems = queryParams
-       
+        
         guard let url = components?.url else {
             print(NetworkErrors.invalidURL)
             return
@@ -37,12 +37,7 @@ class NetworkImplement: NetworkService {
             } catch {
                 completion(.failure(NetworkErrors.dataCantDecoded))
             }
-            
         }
-        
         task.resume()
-        
-        
-        
     }
 }

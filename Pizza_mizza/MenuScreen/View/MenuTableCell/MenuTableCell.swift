@@ -9,11 +9,11 @@ import Foundation
 import UIKit.UITableViewCell
 import Kingfisher
 
-class MenuTableCell: UITableViewCell {
+final class MenuTableCell: UITableViewCell {
     
     static var id = "MenuTableCell"
     
-// MARK: - private properties
+    // MARK: - private properties
     
     private lazy var itemImage: UIImageView = {
         let imageView = UIImageView()
@@ -22,7 +22,7 @@ class MenuTableCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-
+    
     private lazy var itemNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -84,7 +84,7 @@ class MenuTableCell: UITableViewCell {
         descriptionItemView.addSubview(itemNameLabel)
         descriptionItemView.addSubview(itemDescriptionLabel)
         descriptionItemView.addSubview(buyLabel)
-       
+        
         NSLayoutConstraint.activate([
             itemImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.Constraints.MainCell.top),
             itemImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Constraints.MainCell.leading),
@@ -112,10 +112,11 @@ class MenuTableCell: UITableViewCell {
             itemDescriptionLabel.trailingAnchor.constraint(equalTo: descriptionItemView.trailingAnchor),
             itemDescriptionLabel.leadingAnchor.constraint(equalTo: descriptionItemView.leadingAnchor),
         ])
-    
+        
     }
     
     // MARK: - Init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupUI()
@@ -126,5 +127,5 @@ class MenuTableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }

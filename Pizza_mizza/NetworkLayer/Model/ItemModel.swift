@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Network Model
+
 struct ItemModel: Decodable {
     var name: String?
     var description: String?

@@ -13,7 +13,7 @@ protocol DataBaseProtocol {
     func getFromDb() -> [BeerDataObject]
 }
 
-class BeerDataBaseObject: Object {
+final class BeerDataBaseObject: Object {
     @Persisted var id: UUID?
     @Persisted var name: String?
     @Persisted var descript: String?
@@ -35,6 +35,9 @@ class BeerDataBaseObject: Object {
 class BeerDataBase: DataBaseProtocol {
     
     let db = try! Realm()
+    
+    
+    // Protocol implements
     
     func saveToDb(_ data: [BeerDataObject]) {
         data.forEach({ object in

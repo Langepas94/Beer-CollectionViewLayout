@@ -8,15 +8,15 @@
 import Foundation
 
 struct MainModel: MainModelProtocol {
-
+    
     var userCity: String?
-
+    
     var headerImageNames: [String]?
-
+    
     var categories: [String]?
-
+    
     var tableData: [BeerDataObject]?
-
+    
 }
 
 

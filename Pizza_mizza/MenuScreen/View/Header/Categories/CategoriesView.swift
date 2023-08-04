@@ -17,10 +17,11 @@ final class CategoriesView: UITableViewHeaderFooterView {
     weak var delegate: CategoryDelegateProtocol?
     
     var selectedCategory: String
+    
     // MARK: - private properties
     
     var categories: [String]?
-   
+    
     lazy var collectionView: UICollectionView = {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
@@ -43,7 +44,7 @@ final class CategoriesView: UITableViewHeaderFooterView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
-               
+        
     }
     
     private func createCompositionalLayout() -> UICollectionViewLayout {
@@ -62,11 +63,11 @@ final class CategoriesView: UITableViewHeaderFooterView {
         let rowSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.26), heightDimension: rowHeight)
         
         let row = NSCollectionLayoutGroup.horizontal(layoutSize: rowSize, subitems: [item])
-
+        
         let section = NSCollectionLayoutSection(group: row)
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 0)
         
-        section.orthogonalScrollingBehavior = .paging
+        section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
         
         return section
     }
@@ -78,8 +79,6 @@ final class CategoriesView: UITableViewHeaderFooterView {
         self.selectedCategory = selectedCategory
         super.init(reuseIdentifier: CategoriesCell.id)
         self.setupViews()
-        
-    
     }
     
     required init?(coder: NSCoder) {
@@ -97,7 +96,7 @@ extension CategoriesView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CategoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCell.id, for: indexPath) as! CategoriesCell
         cell.configure(string: categories?[indexPath.row] ?? "")
-//        collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .left)
+        
         if categories?[indexPath.row] == selectedCategory {
             cell.isSelectedCell = true
         } else {

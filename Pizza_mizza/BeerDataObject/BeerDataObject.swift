@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK - Like a DTO
 struct BeerDataObject: Codable, Hashable {
     var id = UUID()
     var name: String?

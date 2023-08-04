@@ -34,20 +34,14 @@ class MenuViewController: UIViewController {
         return banners
     }()
     
-    var viewka: CategoriesView?
-    var vv: String = ""
-    var vvv: String? = ""
-    
-    
+    private var mainCollection: CategoriesView?
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
-        
-        
+        setupUIBar()
     }
     
     override func viewWillLayoutSubviews() {
@@ -64,7 +58,7 @@ extension MenuViewController: MainViewProtocol {
     }
     
     func dataLoaded() {
-                viewka?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
+                mainCollection?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
         menuTableView.reloadData()
     }
     
@@ -72,30 +66,26 @@ extension MenuViewController: MainViewProtocol {
 }
 // MARK: - Setup UI
 extension MenuViewController {
+    
+    func setupUIBar() {
+        
+          let menuItem1 = UIAction(title: "Санкт-Петербург") { action in }
+
+          let menuItem2 = UIAction(title: "Сургут") { action in }
+
+          let menuItem3 = UIAction(title: "Волгоград") { action in}
+
+          let cityChanger = UIBarButtonItem(title: "Москва", image: UIImage(systemName: "sun.fill"), primaryAction: nil, menu: UIMenu(title: "", options: .displayInline, children: [menuItem1, menuItem2, menuItem3]))
+        
+        cityChanger.tintColor = .black
+        navigationItem.leftBarButtonItem = cityChanger
+    }
+    
     func setupUI() {
         
         menuTableView.delegate = self
         menuTableView.dataSource = self
         menuTableView.tableHeaderView = headerBanners
-        
-      
-        let menuItem1 = UIAction(title: "Санкт-Петербург") { action in
-            
-        }
-
-        let menuItem2 = UIAction(title: "Сургут") { action in
-            
-        }
-
-        let menuItem3 = UIAction(title: "Волгоград") { action in
-            
-        }
-
-        let cityChanger = UIBarButtonItem(title: "Москва", image: UIImage(systemName: "sun.fill"), primaryAction: nil, menu: UIMenu(title: "", options: .displayInline, children: [menuItem1, menuItem2, menuItem3]))
-   
-        cityChanger.tintColor = .black
-        
-        navigationItem.leftBarButtonItem = cityChanger
         
         view.addSubview(menuTableView)
         
@@ -108,12 +98,8 @@ extension MenuViewController {
         
         guard let categories = presenter?.setCategories() else { return }
         
-//        var productType = presenter?.mainData?.tableData?[0].category
-//        if productType == currentProductType {
-//            currentProductType = productType
-//        }
-        viewka = CategoriesView(categories: categories, selectedCategory: categories.first!)
-        viewka?.delegate = self
+        mainCollection = CategoriesView(categories: categories, selectedCategory: categories.first ?? "")
+        mainCollection?.delegate = self
     }
 }
 
@@ -137,7 +123,7 @@ extension MenuViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
-        return viewka
+        return mainCollection
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -152,12 +138,8 @@ extension MenuViewController: CategoryDelegateProtocol {
         let index = products?.firstIndex(where: { $0.category == type })
         if let index = index {
             let indexPath = IndexPath(item: index, section: 0)
-//            let rect = menuTableView.rectForRow(at: indexPath).origin.y - 50
-//            let alreadyRect = CGRect(x: 0, y: rect, width: menuTableView.bounds.width, height: menuTableView.frame.height)
+
             menuTableView.scrollToRow(at: indexPath, at: .top, animated: true)
-            
-            menuTableView.scrollToRow(at: indexPath, at: .top, animated: true)
-           
         }
     }
 }
@@ -174,17 +156,18 @@ extension MenuViewController: UITableViewDelegate {
                 guard let productType = productType else { return }
 
                 let categories = presenter?.mainData?.categories  ?? ["empty"]
-                guard let viewka = viewka else { return }
+                guard let viewka = mainCollection else { return }
               
                 viewka.categories = categories
                 viewka.selectedCategory = productType
                 
                 let indexPaths = viewka.collectionView.indexPathsForVisibleItems
-                
-                if let lastIndexPath = indexPaths.first, scrollView.contentOffset.y > lastContentOffset {
+         
+                if let lastIndexPath = indexPaths.last, scrollView.contentOffset.y > lastContentOffset + 100 {
                     viewka.collectionView.scrollToItem(at: lastIndexPath, at: .centeredHorizontally, animated: false)
                     
                     viewka.collectionView.reloadItems(at: indexPaths)
+                    
                 } else if let firstIndexPath = indexPaths.first {
                     viewka.collectionView.scrollToItem(at: firstIndexPath, at: .centeredHorizontally, animated: false)
                     viewka.collectionView.reloadItems(at: indexPaths)

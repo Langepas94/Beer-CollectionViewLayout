@@ -8,7 +8,7 @@
 import Foundation
 import UIKit.UICollectionViewCell
 
-class HeaderCell: UICollectionViewCell {
+final class HeaderCell: UICollectionViewCell {
     
     static let id = "HeaderCell"
     
@@ -27,7 +27,7 @@ class HeaderCell: UICollectionViewCell {
     
     private func setupView() {
         addSubview(bannerImageView)
-    
+        
         NSLayoutConstraint.activate([
             bannerImageView.topAnchor.constraint(equalTo: topAnchor),
             bannerImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -35,6 +35,8 @@ class HeaderCell: UICollectionViewCell {
             bannerImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+    
+    // MARK: Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)

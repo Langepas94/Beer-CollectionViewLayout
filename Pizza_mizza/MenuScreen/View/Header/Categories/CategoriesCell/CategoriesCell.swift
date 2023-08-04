@@ -12,6 +12,8 @@ final class CategoriesCell: UICollectionViewCell {
     
     static let id = "CategoriesCell"
     
+    // MARK: Properties
+    
     private let labelView: UILabel = {
         let label = UILabel()
         label.textColor = .systemPink
@@ -23,20 +25,6 @@ final class CategoriesCell: UICollectionViewCell {
         return label
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-        
-    }
-//    override var isSelected: Bool {
-//        didSet {
-//            if isSelected {
-//                labelView.backgroundColor = .systemPink.withAlphaComponent(0.2)
-//            } else {
-//                labelView.backgroundColor = .white
-//            }
-//        }
-//    }
     var isSelectedCell: Bool = false {
         didSet {
             if isSelectedCell {
@@ -46,20 +34,16 @@ final class CategoriesCell: UICollectionViewCell {
             }
         }
     }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+  
+    // MARK: Methods
     
     func configure(string: String) {
         labelView.text = string
     }
     
-    
-    
     private func setupView() {
         
         backgroundColor = .systemBackground
-        
         labelView.clipsToBounds = true
         labelView.layer.cornerRadius = 10
         
@@ -71,5 +55,16 @@ final class CategoriesCell: UICollectionViewCell {
             labelView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             labelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
         ])
+    }
+    
+    // MARK: Init
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("didnt found storyboard here")
     }
 }

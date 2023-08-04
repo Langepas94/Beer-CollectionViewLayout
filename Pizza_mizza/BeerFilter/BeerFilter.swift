@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Mock filter to create categories
+
 final class BeerFilter {
     
     private var filters: [(min: Double, max: Double, categoryName: String)] = [(0.0,5.0, "Classic Beer"), (5.0001, 7.0, "Nice drunk"),(7.0001, 10.0, "Highest"), (10.0001, 12.0, "Post Highest"), (12.0001, 100.0, "Drunken")]
