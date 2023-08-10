@@ -52,6 +52,9 @@ final class MenuPresenter: MenuPresenterProtocol {
                     
                 }
             case .failure(let error):
+                if db.emptyCheck() {
+                    handleError = true
+                }
                 print(error)
             }
         }

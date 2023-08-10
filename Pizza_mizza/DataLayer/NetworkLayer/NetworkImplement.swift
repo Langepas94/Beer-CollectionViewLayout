@@ -19,12 +19,17 @@ final class NetworkImplement: NetworkService {
         components?.path = "/v2/" + FetchType.allBeers.rawValue
         components?.queryItems = queryParams
         
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 5.0
+        sessionConfig.timeoutIntervalForResource = 10.0
+        let session = URLSession(configuration: sessionConfig)
+        
         guard let url = components?.url else {
             print(NetworkErrors.invalidURL)
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             guard let data = data else  {
                 completion(.failure(NetworkErrors.noDataAvailable))
                 return
