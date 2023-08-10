@@ -68,7 +68,10 @@ final class MainCoordinator: Coordinator {
     
     func createContactsModule() -> UIViewController {
         let view = UIViewController()
+        let error = ErrorMainScreen()
+        error.frame = view.view.bounds
         view.tabBarItem = UITabBarItem(title: "Contacst", image: UIImage(systemName: "phone.fill"), tag: 1)
+        view.view.addSubview(error)
         view.view.backgroundColor = .white
         return view
     }
