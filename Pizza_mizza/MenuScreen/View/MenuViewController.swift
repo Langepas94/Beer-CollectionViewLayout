@@ -34,6 +34,13 @@ class MenuViewController: UIViewController {
         return banners
     }()
     
+    private lazy var networkError: ErrorMainScreen = {
+        let errorView = ErrorMainScreen()
+        errorView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.isHidden = !(presenter?.handleError ?? true)
+        return errorView
+    }()
+    
     private var mainCollection: CategoriesView?
     
     // MARK: - View lifecycle
@@ -88,12 +95,18 @@ extension MenuViewController {
         menuTableView.tableHeaderView = headerBanners
         
         view.addSubview(menuTableView)
+        view.addSubview(networkError)
         
         NSLayoutConstraint.activate([
             menuTableView.topAnchor.constraint(equalTo: view.topAnchor),
             menuTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             menuTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            menuTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            menuTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            networkError.topAnchor.constraint(equalTo: view.topAnchor),
+            networkError.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            networkError.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            networkError.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
         guard let categories = presenter?.setCategories() else { return }

@@ -30,21 +30,22 @@ class ErrorMainScreen: UIView {
         return label
     }()
     
+    // MARK: - Setup UI
     func setupUI() {
         addSubview(bannerImageView)
         addSubview(labelView)
         
         NSLayoutConstraint.activate([
             bannerImageView.widthAnchor.constraint(equalToConstant: 50),
-             bannerImageView.heightAnchor.constraint(equalToConstant: 50),
-             bannerImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            bannerImageView.heightAnchor.constraint(equalToConstant: 50),
+            bannerImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             bannerImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -50),
-             
-             labelView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26),
-             labelView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26),
-             labelView.topAnchor.constraint(equalTo: bannerImageView.bottomAnchor, constant: 16),
+            
+            labelView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26),
+            labelView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26),
+            labelView.topAnchor.constraint(equalTo: bannerImageView.bottomAnchor, constant: 16),
             labelView.heightAnchor.constraint(equalToConstant: 100)
-        
+            
         ])
     }
     

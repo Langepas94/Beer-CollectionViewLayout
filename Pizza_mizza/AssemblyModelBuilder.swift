@@ -30,7 +30,6 @@ class AssemblyBulder: AssemblyBulderProtocol {
         navigation.navigationBar.tintColor = .white
         let networkService = NetworkImplement()
         let presenter = MenuPresenter(view: mainView, networkManager: networkService)
-
         mainView.presenter = presenter
         
         return navigation

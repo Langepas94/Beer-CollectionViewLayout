@@ -15,6 +15,8 @@
 		447E9CBA2A7A86D400A0A9FD /* DataBaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9CB92A7A86D400A0A9FD /* DataBaseLayer.swift */; };
 		447E9CBC2A7A86E500A0A9FD /* DataBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9CBB2A7A86E500A0A9FD /* DataBaseProtocol.swift */; };
 		447E9D0F2A84C4CD00A0A9FD /* ErrorMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9D0E2A84C4CD00A0A9FD /* ErrorMainScreen.swift */; };
+		447E9D122A84CB3F00A0A9FD /* BeerDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9D112A84CB3F00A0A9FD /* BeerDataBase.swift */; };
+		447E9D142A84CB9200A0A9FD /* NetworkChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9D132A84CB9200A0A9FD /* NetworkChecker.swift */; };
 		44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E952A444D9000DF483C /* AppDelegate.swift */; };
 		44C61E982A444D9000DF483C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E972A444D9000DF483C /* SceneDelegate.swift */; };
 		44C61E9A2A444D9000DF483C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E992A444D9000DF483C /* MenuViewController.swift */; };
@@ -64,6 +66,8 @@
 		447E9CB92A7A86D400A0A9FD /* DataBaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseLayer.swift; sourceTree = "<group>"; };
 		447E9CBB2A7A86E500A0A9FD /* DataBaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseProtocol.swift; sourceTree = "<group>"; };
 		447E9D0E2A84C4CD00A0A9FD /* ErrorMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMainScreen.swift; sourceTree = "<group>"; };
+		447E9D112A84CB3F00A0A9FD /* BeerDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDataBase.swift; sourceTree = "<group>"; };
+		447E9D132A84CB9200A0A9FD /* NetworkChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkChecker.swift; sourceTree = "<group>"; };
 		44C61E922A444D9000DF483C /* Pizza_mizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizza_mizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C61E952A444D9000DF483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C61E972A444D9000DF483C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			children = (
 				447E9CB92A7A86D400A0A9FD /* DataBaseLayer.swift */,
 				447E9CBB2A7A86E500A0A9FD /* DataBaseProtocol.swift */,
+				447E9D112A84CB3F00A0A9FD /* BeerDataBase.swift */,
 			);
 			path = DataBaseLayer;
 			sourceTree = "<group>";
@@ -159,6 +164,15 @@
 				447E9D0E2A84C4CD00A0A9FD /* ErrorMainScreen.swift */,
 			);
 			path = ErrorScreen;
+			sourceTree = "<group>";
+		};
+		447E9D102A84CAA100A0A9FD /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				44C61EE22A44641300DF483C /* NetworkLayer */,
+				447E9CB82A7A86B900A0A9FD /* DataBaseLayer */,
+			);
+			path = DataLayer;
 			sourceTree = "<group>";
 		};
 		44C61E892A444D9000DF483C = {
@@ -184,11 +198,10 @@
 		44C61E942A444D9000DF483C /* Pizza_mizza */ = {
 			isa = PBXGroup;
 			children = (
-				447E9CB82A7A86B900A0A9FD /* DataBaseLayer */,
+				447E9D102A84CAA100A0A9FD /* DataLayer */,
 				447E9C522A6E680800A0A9FD /* BeerDataObject */,
 				447E9C4F2A6E67C700A0A9FD /* BeerFilter */,
 				447E9C4B2A6E443500A0A9FD /* Coordinator */,
-				44C61EE22A44641300DF483C /* NetworkLayer */,
 				44C61ECF2A44551000DF483C /* Resources */,
 				44C61EC82A44518500DF483C /* MenuScreen */,
 				44C61E952A444D9000DF483C /* AppDelegate.swift */,
@@ -279,6 +292,7 @@
 				44C61EE62A44653700DF483C /* Model */,
 				44C61EE32A44649800DF483C /* NetworkService.swift */,
 				44C61EE92A446D8000DF483C /* NetworkImplement.swift */,
+				447E9D132A84CB9200A0A9FD /* NetworkChecker.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -475,12 +489,14 @@
 			files = (
 				44C61EE42A44649800DF483C /* NetworkService.swift in Sources */,
 				447E9C512A6E67D500A0A9FD /* BeerFilter.swift in Sources */,
+				447E9D142A84CB9200A0A9FD /* NetworkChecker.swift in Sources */,
 				44C61EF92A4573F100DF483C /* MenuTableCell.swift in Sources */,
 				44C61EDD2A445D1D00DF483C /* MainModel.swift in Sources */,
 				44C61E9A2A444D9000DF483C /* MenuViewController.swift in Sources */,
 				44C61EEC2A44784500DF483C /* AssemblyModelBuilder.swift in Sources */,
 				447E9C542A6E681500A0A9FD /* BeerDataObject.swift in Sources */,
 				44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */,
+				447E9D122A84CB3F00A0A9FD /* BeerDataBase.swift in Sources */,
 				44C61EE12A4463A600DF483C /* MenuPresenter.swift in Sources */,
 				44C61F022A45AE4E00DF483C /* CategoriesCell.swift in Sources */,
 				447E9CBC2A7A86E500A0A9FD /* DataBaseProtocol.swift in Sources */,
