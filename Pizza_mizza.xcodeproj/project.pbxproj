@@ -17,6 +17,7 @@
 		447E9D0F2A84C4CD00A0A9FD /* ErrorMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9D0E2A84C4CD00A0A9FD /* ErrorMainScreen.swift */; };
 		447E9D122A84CB3F00A0A9FD /* BeerDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9D112A84CB3F00A0A9FD /* BeerDataBase.swift */; };
 		447E9D142A84CB9200A0A9FD /* NetworkChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9D132A84CB9200A0A9FD /* NetworkChecker.swift */; };
+		447E9D162A8527E100A0A9FD /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9D152A8527E100A0A9FD /* MainViewPresenter.swift */; };
 		44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E952A444D9000DF483C /* AppDelegate.swift */; };
 		44C61E982A444D9000DF483C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E972A444D9000DF483C /* SceneDelegate.swift */; };
 		44C61E9A2A444D9000DF483C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61E992A444D9000DF483C /* MenuViewController.swift */; };
@@ -28,8 +29,6 @@
 		44C61ED12A44551D00DF483C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61ED02A44551D00DF483C /* Constants.swift */; };
 		44C61ED92A44588B00DF483C /* MainModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61ED82A44588B00DF483C /* MainModelProtocol.swift */; };
 		44C61EDD2A445D1D00DF483C /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EDC2A445D1D00DF483C /* MainModel.swift */; };
-		44C61EDF2A445EEE00DF483C /* MenuPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EDE2A445EEE00DF483C /* MenuPresenterProtocol.swift */; };
-		44C61EE12A4463A600DF483C /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EE02A4463A600DF483C /* MenuPresenter.swift */; };
 		44C61EE42A44649800DF483C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EE32A44649800DF483C /* NetworkService.swift */; };
 		44C61EE82A44653F00DF483C /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EE72A44653F00DF483C /* ItemModel.swift */; };
 		44C61EEA2A446D8000DF483C /* NetworkImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C61EE92A446D8000DF483C /* NetworkImplement.swift */; };
@@ -68,6 +67,7 @@
 		447E9D0E2A84C4CD00A0A9FD /* ErrorMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMainScreen.swift; sourceTree = "<group>"; };
 		447E9D112A84CB3F00A0A9FD /* BeerDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDataBase.swift; sourceTree = "<group>"; };
 		447E9D132A84CB9200A0A9FD /* NetworkChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkChecker.swift; sourceTree = "<group>"; };
+		447E9D152A8527E100A0A9FD /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
 		44C61E922A444D9000DF483C /* Pizza_mizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizza_mizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C61E952A444D9000DF483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C61E972A444D9000DF483C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,8 +83,6 @@
 		44C61ED02A44551D00DF483C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44C61ED82A44588B00DF483C /* MainModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModelProtocol.swift; sourceTree = "<group>"; };
 		44C61EDC2A445D1D00DF483C /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
-		44C61EDE2A445EEE00DF483C /* MenuPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenterProtocol.swift; sourceTree = "<group>"; };
-		44C61EE02A4463A600DF483C /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		44C61EE32A44649800DF483C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		44C61EE72A44653F00DF483C /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		44C61EE92A446D8000DF483C /* NetworkImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImplement.swift; sourceTree = "<group>"; };
@@ -263,8 +261,7 @@
 		44C61ECB2A4451AB00DF483C /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				44C61EDE2A445EEE00DF483C /* MenuPresenterProtocol.swift */,
-				44C61EE02A4463A600DF483C /* MenuPresenter.swift */,
+				447E9D152A8527E100A0A9FD /* MainViewPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -495,9 +492,9 @@
 				44C61E9A2A444D9000DF483C /* MenuViewController.swift in Sources */,
 				44C61EEC2A44784500DF483C /* AssemblyModelBuilder.swift in Sources */,
 				447E9C542A6E681500A0A9FD /* BeerDataObject.swift in Sources */,
+				447E9D162A8527E100A0A9FD /* MainViewPresenter.swift in Sources */,
 				44C61E962A444D9000DF483C /* AppDelegate.swift in Sources */,
 				447E9D122A84CB3F00A0A9FD /* BeerDataBase.swift in Sources */,
-				44C61EE12A4463A600DF483C /* MenuPresenter.swift in Sources */,
 				44C61F022A45AE4E00DF483C /* CategoriesCell.swift in Sources */,
 				447E9CBC2A7A86E500A0A9FD /* DataBaseProtocol.swift in Sources */,
 				44C61EE82A44653F00DF483C /* ItemModel.swift in Sources */,
@@ -511,7 +508,6 @@
 				44C61EFF2A45AE2500DF483C /* CategoriesView.swift in Sources */,
 				44C61EEA2A446D8000DF483C /* NetworkImplement.swift in Sources */,
 				44C61EF62A456FDB00DF483C /* HeaderCell.swift in Sources */,
-				44C61EDF2A445EEE00DF483C /* MenuPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

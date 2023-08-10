@@ -1,30 +1,55 @@
 //
-//  MenuPresenter.swift
+//  MainViewPresenter.swift
 //  Pizza_mizza
 //
-//  Created by Artem on 22.06.2023.
+//  Created by Артём Тюрморезов on 10.08.2023.
 //
 
 import Foundation
-import RealmSwift
 
-final class MenuPresenter: MenuPresenterProtocol {
+protocol MainViewProtocol: AnyObject {
+    func setData()
+    func setNoInternetAvailable()
+    func startLoading()
+    func endLoading()
+}
+
+protocol ViewPresenterProtocol {
+    init(view: MainViewProtocol, networkManager: NetworkService)
+//    var handleError: Bool { get set }
+    var mainData: MainModel? { get set }
+    func getData()
+    func setCategories() -> [String]
+}
+
+class MainViewPresenter: ViewPresenterProtocol {
     
-    weak var view: MainViewProtocol?
-    let networkManager: NetworkService
-    let categs = BeerFilter()
+    unowned let view: MainViewProtocol
     var mainData: MainModel? = MainModel(headerImageNames: ["banner1", "banner2", "banner3", "banner4", "banner5", "banner6"])
+    let networkManager: NetworkService
     var db: DataBaseProtocol = BeerDataBase()
-    var handleError: Bool = false
+//    var handleError: Bool = false
+    let categs = BeerFilter()
+    
+    required init(view: MainViewProtocol, networkManager: NetworkService) {
+        self.view = view
+//        self.mainData = mainData as? MainModel
+        self.networkManager = networkManager
+        getData()
+    }
     
     func getData() {
-        
+        self.view.startLoading()
         if NetworkChecker.shared.isConnected {
             networkData()
+            
         } else if !NetworkChecker.shared.isConnected && db.emptyCheck() == false {
             dbOfflineData()
+            self.view.endLoading()
         } else if !NetworkChecker.shared.isConnected && db.emptyCheck() == true {
-            handleError.toggle()
+//            handleError.toggle()
+            self.view.setNoInternetAvailable()
+            self.view.endLoading()
         }
     }
     
@@ -47,33 +72,20 @@ final class MenuPresenter: MenuPresenterProtocol {
                     let filtered = self.categs.filterBeers(beers: data ?? [ItemModel]())
                     self.mainData?.tableData = filtered
                     self.mainData?.categories = self.categs.getCategories()
-                    self.view?.dataLoaded()
+                    self.view.setData()
+                    self.view.endLoading()
                     self.db.saveToDb(filtered)
-                    
                 }
             case .failure(let error):
                 if db.emptyCheck() {
-                    handleError = true
+                    self.view.setNoInternetAvailable()
                 }
                 print(error)
             }
         }
     }
     
-    // MARK: setup Tap here in future
-    func onTapCategory() {
-        //
-    }
-    
     func setCategories() -> [String] {
         categs.getCategories()
-    }
-    
-    // MARK: Init
-    
-    required init(view: MainViewProtocol, networkManager: NetworkService) {
-        self.networkManager = networkManager
-        self.view = view
-        getData()
     }
 }

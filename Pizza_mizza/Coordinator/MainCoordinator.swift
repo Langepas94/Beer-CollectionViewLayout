@@ -57,9 +57,10 @@ final class MainCoordinator: Coordinator {
         navigation.tabBarItem = UITabBarItem(title: "Menu", image: UIImage(systemName: "list.bullet.rectangle.portrait.fill"), tag: 0)
         navigation.navigationBar.tintColor = .white
         let networkService = NetworkImplement()
-        let presenter = MenuPresenter(view: mainView, networkManager: networkService)
+        
+        let presenter2 = MainViewPresenter(view: mainView, networkManager: networkService)
 
-        mainView.presenter = presenter
+        mainView.presenter = presenter2
         
         return navigation
     }

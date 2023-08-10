@@ -9,7 +9,7 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var presenter: MenuPresenterProtocol?
+    var presenter: ViewPresenterProtocol?
     private var currentProductType: String?
     private var lastContentOffset: CGFloat = 0
     
@@ -36,9 +36,16 @@ class MenuViewController: UIViewController {
     
     private lazy var networkError: ErrorMainScreen = {
         let errorView = ErrorMainScreen()
+        errorView.isHidden = true
         errorView.translatesAutoresizingMaskIntoConstraints = false
-        errorView.isHidden = !(presenter?.handleError ?? true)
         return errorView
+    }()
+    
+    private var loadingSpinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView()
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.hidesWhenStopped = true
+        return spinner
     }()
     
     private let refreshControl = UIRefreshControl()
@@ -51,6 +58,7 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupUIBar()
+        
     }
     
     @objc private func refreshData(_ sender: Any) {
@@ -62,19 +70,6 @@ class MenuViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         menuTableView.rowHeight = CGFloat(Constants.Constraints.rowOnTableHeight)
-    }
-}
-
-// MARK: - view protocol implement
-
-extension MenuViewController: MainViewProtocol {
-    func tappedOnCategories() {
-        //
-    }
-    
-    func dataLoaded() {
-                mainCollection?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
-        menuTableView.reloadData()
     }
 }
 
@@ -104,6 +99,8 @@ extension MenuViewController {
         
         view.addSubview(menuTableView)
         view.addSubview(networkError)
+        view.addSubview(loadingSpinner)
+        
         
         NSLayoutConstraint.activate([
             menuTableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -115,6 +112,11 @@ extension MenuViewController {
             networkError.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             networkError.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             networkError.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            loadingSpinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingSpinner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loadingSpinner.heightAnchor.constraint(equalToConstant: 100),
+            loadingSpinner.widthAnchor.constraint(equalToConstant: 100)
         ])
         
         guard let categories = presenter?.setCategories() else { return }
@@ -198,5 +200,27 @@ extension MenuViewController: UITableViewDelegate {
                 lastContentOffset = scrollView.contentOffset.y
             }
         }
+    }
+}
+
+// MARK: View Protocol implement
+
+extension MenuViewController: MainViewProtocol {
+    
+    func setData() {
+        menuTableView.reloadData()
+    }
+    
+    func setNoInternetAvailable() {
+        menuTableView.isHidden = true
+        networkError.isHidden = false
+    }
+    
+    func startLoading() {
+        self.loadingSpinner.startAnimating()
+    }
+    
+    func endLoading() {
+        self.loadingSpinner.stopAnimating()
     }
 }
