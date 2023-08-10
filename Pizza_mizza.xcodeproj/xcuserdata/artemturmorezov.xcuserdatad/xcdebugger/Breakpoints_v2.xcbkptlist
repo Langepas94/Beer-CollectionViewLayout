@@ -94,8 +94,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "Pizza_mizza/MenuScreen/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "scrollToSelectedCategory(type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -226,6 +226,99 @@
             endingLineNumber = "21"
             landmarkName = "saveToDb(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "234E3112-95E8-4330-AA12-742BE68AB4B7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pizza_mizza/DataLayer/DataBaseLayer/BeerDataBase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "saveToDb(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "234E3112-95E8-4330-AA12-742BE68AB4B7 - f79ff45e124442cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pizza_mizza.BeerDataBase.saveToDb(Swift.Array&lt;Pizza_mizza.BeerDataObject&gt;) -&gt; ()"
+                  moduleName = "Pizza_mizza"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/DataLayer/DataBaseLayer/BeerDataBase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  uuid = "234E3112-95E8-4330-AA12-742BE68AB4B7 - 2293c4d0a69876ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Pizza_mizza.BeerDataObject) -&gt; Pizza_mizza.BeerDataBaseObject in Pizza_mizza.BeerDataBase.saveToDb(Swift.Array&lt;Pizza_mizza.BeerDataObject&gt;) -&gt; ()"
+                  moduleName = "Pizza_mizza"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/DataLayer/DataBaseLayer/BeerDataBase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "234E3112-95E8-4330-AA12-742BE68AB4B7 - 11c6de349ad991a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Pizza_mizza.BeerDataBaseObject) -&gt; Swift.Bool in Pizza_mizza.BeerDataBase.saveToDb(Swift.Array&lt;Pizza_mizza.BeerDataObject&gt;) -&gt; ()"
+                  moduleName = "Pizza_mizza"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/DataLayer/DataBaseLayer/BeerDataBase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "234E3112-95E8-4330-AA12-742BE68AB4B7 - fb4d70025bd3b1d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 () -&gt; Swift.LazyMapSequence&lt;Swift.LazyFilterSequence&lt;RealmSwift.Results&lt;Pizza_mizza.BeerDataBaseObject&gt;&gt;, Swift.Array&lt;()&gt;&gt; in Pizza_mizza.BeerDataBase.saveToDb(Swift.Array&lt;Pizza_mizza.BeerDataObject&gt;) -&gt; ()"
+                  moduleName = "Pizza_mizza"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/DataLayer/DataBaseLayer/BeerDataBase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "234E3112-95E8-4330-AA12-742BE68AB4B7 - e524b977b8dd9ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Pizza_mizza.BeerDataBaseObject) -&gt; Swift.Array&lt;()&gt; in closure #4 () -&gt; Swift.LazyMapSequence&lt;Swift.LazyFilterSequence&lt;RealmSwift.Results&lt;Pizza_mizza.BeerDataBaseObject&gt;&gt;, Swift.Array&lt;()&gt;&gt; in Pizza_mizza.BeerDataBase.saveToDb(Swift.Array&lt;Pizza_mizza.BeerDataObject&gt;) -&gt; ()"
+                  moduleName = "Pizza_mizza"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemturmorezov/Documents/GitHub/Pizza_mizza/Pizza_mizza/DataLayer/DataBaseLayer/BeerDataBase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

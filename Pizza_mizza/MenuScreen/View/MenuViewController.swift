@@ -41,6 +41,8 @@ class MenuViewController: UIViewController {
         return errorView
     }()
     
+    private let refreshControl = UIRefreshControl()
+    
     private var mainCollection: CategoriesView?
     
     // MARK: - View lifecycle
@@ -51,6 +53,12 @@ class MenuViewController: UIViewController {
         setupUIBar()
     }
     
+    @objc private func refreshData(_ sender: Any) {
+        presenter?.getData()
+        menuTableView.refreshControl?.endRefreshing()
+        menuTableView.reloadData()
+    }
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         menuTableView.rowHeight = CGFloat(Constants.Constraints.rowOnTableHeight)
@@ -68,10 +76,10 @@ extension MenuViewController: MainViewProtocol {
                 mainCollection?.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .right)
         menuTableView.reloadData()
     }
-    
-    
 }
+
 // MARK: - Setup UI
+
 extension MenuViewController {
     
     func setupUIBar() {
@@ -113,6 +121,8 @@ extension MenuViewController {
         
         mainCollection = CategoriesView(categories: categories, selectedCategory: categories.first ?? "")
         mainCollection?.delegate = self
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        menuTableView.refreshControl = refreshControl
     }
 }
 
@@ -189,6 +199,4 @@ extension MenuViewController: UITableViewDelegate {
             }
         }
     }
-    
-    
 }
